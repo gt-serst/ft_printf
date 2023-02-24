@@ -6,43 +6,47 @@
 #    By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/17 22:06:54 by geraudtsers       #+#    #+#              #
-#    Updated: 2023/02/24 12:20:15 by gt-serst         ###   ########.fr        #
+#    Updated: 2023/02/24 12:30:19 by gt-serst         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	libftprintf.a
+NAME				=	libftprintf.a
 
-CC				=	gcc
-CFLAGS			=	-Wall -Wextra -Werror
-AR				=	ar rcs
-RM				=	rm -rf
+CC					=	gcc
 
-SRCS			=	ft_printf.c ft_printchar.c ft_printstr.c ft_print_address.c ft_printnbr_base.c
+CFLAGS				=	-Wall -Wextra -Werror
 
-OBJS			=	$(addprefix srcs/, $(SRCS:.c=.o))
+AR					=	ar rcs
 
-LIBFT_PATH		=	./libft
-LIBFT			=	$(LIBFT_PATH)/libft.a
+RM					=	rm -rf
+
+SRCS				=	ft_printf.c ft_printchar.c ft_printstr.c ft_print_address.c ft_printnbr_base.c
+
+OBJS				=	$(addprefix srcs/, $(SRCS:.c=.o))
+
+LIBFT_PATH			=	./libft
+
+LIBFT				=	$(LIBFT_PATH)/libft.a
 
 .c.o:
-				$(CC) $(FLAGS) -c -I./includes $< -o $(<:.c=.o)
+					$(CC) $(FLAGS) -c -I./includes $< -o $(<:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS)
-				cp	$(LIBFT) $(NAME)
-					$(AR) $(NAME) $(OBJS)
+					cp	$(LIBFT) $(NAME)
+						$(AR) $(NAME) $(OBJS)
 
 $(LIBFT):
-				make -C $(LIBFT_PATH) all
+					make -C $(LIBFT_PATH) all
 
 clean:
-				make -C $(LIBFT_PATH) clean
-				$(RM) $(OBJS)
+					make -C $(LIBFT_PATH) clean
+					$(RM) $(OBJS)
 
 fclean:	clean
-				make -C $(LIBFT_PATH) fclean
-				$(RM) $(NAME)
+					make -C $(LIBFT_PATH) fclean
+					$(RM) $(NAME)
 
 re: fclean all
 
