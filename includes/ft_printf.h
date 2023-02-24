@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 16:33:46 by gt-serst          #+#    #+#             */
-/*   Updated: 2023/01/20 15:48:41 by gt-serst         ###   ########.fr       */
+/*   Updated: 2023/02/24 12:18:29 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdarg.h>
 # include <unistd.h>
-# include "libft/libft.h"
+# include "../libft/libft.h"
 
 int	ft_printf(const char *format, ...);
 int	ft_printchar(char c);
