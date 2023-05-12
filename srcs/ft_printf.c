@@ -24,7 +24,7 @@ static int	ft_print_format(va_list args, const char *format)
 	else if (*format == 's')
 		print_length += ft_printstr(va_arg(args, char *));
 	else if (*format == 'p')
-		print_length += ft_print_address(va_arg(args, unsigned long long),
+		print_length += ft_print_address(va_arg(args, long long),
 				"0123456789abcdef");
 	else if (*format == 'd' || *format == 'i')
 		print_length += ft_printnbr_base(va_arg(args, int), "0123456789");
@@ -64,6 +64,7 @@ int	ft_printf(const char *format, ...)
 	return (print_length);
 }
 
+/*
 #include <stdio.h>
 int	main(void)
 {
@@ -80,7 +81,7 @@ int	main(void)
 
 	count_printf = 0;
 	count_ft_printf = 0;
-	c = 40000;
+	c = -40000;
 	s = "";
 	p = &c;
 	d = 1413756;
@@ -109,3 +110,4 @@ int	main(void)
 	printf("Count de ft_printf: %d\n", count_ft_printf);
 	return (0);
 }
+*/

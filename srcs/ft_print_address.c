@@ -50,7 +50,7 @@ int print_length)
 			print_length));
 }
 
-int	ft_print_address(unsigned long nbr, char *base)
+int	ft_print_address(long nbr, char *base)
 {
 	int	len_base;
 	int	print_length;

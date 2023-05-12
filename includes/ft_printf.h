@@ -20,7 +20,7 @@
 int	ft_printf(const char *format, ...);
 int	ft_printchar(char c);
 int	ft_printstr(char *s);
-int	ft_print_address(unsigned long nbr, char *base);
+int	ft_print_address(long nbr, char *base);
 int	ft_printnbr_base(long nbr, char *base);
 
 #endif
