@@ -64,14 +64,14 @@ int	ft_printf(const char *format, ...)
 	return (print_length);
 }
 
-/*
+#include <stdio.h>
 int	main(void)
 {
 	int				count_printf;
 	int				count_ft_printf;
-	char			c;
+	int			c;
 	char			*s;
-	char			*p;
+	int			*p;
 	int				d;
 	int				i;
 	int				u;
@@ -80,14 +80,14 @@ int	main(void)
 
 	count_printf = 0;
 	count_ft_printf = 0;
-	c = 'd';
+	c = 40000;
 	s = "";
 	p = &c;
-	d = 14137561456491;
-	i = 14137561456491;
-	u = -141375;
-	x = 14137561456491;
-	X = -14137561455555;
+	d = 1413756;
+	i = 141375;
+	u = -141;
+	x = 1413756;
+	X = -141375;
 	printf("Fonction printf original:\n");
 	//count_printf = printf("%s", s);
 	count_printf += printf("%c", c);
@@ -109,4 +109,3 @@ int	main(void)
 	printf("Count de ft_printf: %d\n", count_ft_printf);
 	return (0);
 }
-*/
