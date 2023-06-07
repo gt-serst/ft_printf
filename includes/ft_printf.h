@@ -18,9 +18,16 @@
 # include "../libft/libft.h"
 
 int	ft_printf(const char *format, ...);
+<<<<<<< HEAD
 int	printchar(char c);
 int	printstr(char *s);
 int	print_address(unsigned long nbr, char *base);
 int	printnbr_base(long nbr, char *base);
+=======
+int	ft_printchar(char c);
+int	ft_printstr(char *s);
+int	ft_print_address(long nbr, char *base);
+int	ft_printnbr_base(long nbr, char *base);
+>>>>>>> 074a4be4e08e56148f71951409a40111cc1ff6f3
 
 #endif

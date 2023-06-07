@@ -29,7 +29,7 @@ LIBFT_PATH			=	./libft
 LIBFT				=	$(LIBFT_PATH)/libft.a
 
 .c.o:
-					$(CC) $(FLAGS) -c -I./includes $< -o $(<:.c=.o)
+					$(CC) $(CFLAGS) -c -I./includes $< -o $(<:.c=.o)
 
 all: $(NAME)
 

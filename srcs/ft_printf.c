@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 16:03:34 by gt-serst          #+#    #+#             */
-/*   Updated: 2023/06/07 10:22:24 by gt-serst         ###   ########.fr       */
+/*   Updated: 2023/06/07 10:23:53 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,9 @@ int	main(void)
 {
 	int				count_printf;
 	int				count_ft_printf;
-	char			c;
+	int			c;
 	char			*s;
-	char			*p;
+	int			*p;
 	int				d;
 	int				i;
 	int				u;
@@ -81,14 +81,22 @@ int	main(void)
 
 	count_printf = 0;
 	count_ft_printf = 0;
-	c = 'd';
+	c = -40000;
 	s = "";
 	p = &c;
+<<<<<<< HEAD
 	d = 14137;
 	i = 14137561;
 	u = -141375;
 	x = 1413756;
 	X = -14137;
+=======
+	d = 1413756;
+	i = 141375;
+	u = -141;
+	x = 1413756;
+	X = -141375;
+>>>>>>> 074a4be4e08e56148f71951409a40111cc1ff6f3
 	printf("Fonction printf original:\n");
 	//count_printf = printf("%s", s);
 	count_printf += printf("%c", c);
