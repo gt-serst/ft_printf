@@ -6,36 +6,36 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 16:03:34 by gt-serst          #+#    #+#             */
-/*   Updated: 2023/02/24 12:08:31 by gt-serst         ###   ########.fr       */
+/*   Updated: 2023/06/07 10:22:24 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_print_format(va_list args, const char *format)
+static int	print_format(va_list args, const char *format)
 {
 	int	print_length;
 
 	print_length = 0;
 	if (*format == 'c')
-		print_length += ft_printchar(va_arg(args, int));
+		print_length += printchar(va_arg(args, int));
 	else if (*format == '%')
-		print_length += ft_printchar(*format);
+		print_length += printchar(*format);
 	else if (*format == 's')
-		print_length += ft_printstr(va_arg(args, char *));
+		print_length += printstr(va_arg(args, char *));
 	else if (*format == 'p')
-		print_length += ft_print_address(va_arg(args, unsigned long long),
+		print_length += print_address(va_arg(args, unsigned long long),
 				"0123456789abcdef");
 	else if (*format == 'd' || *format == 'i')
-		print_length += ft_printnbr_base(va_arg(args, int), "0123456789");
+		print_length += printnbr_base(va_arg(args, int), "0123456789");
 	else if (*format == 'u')
-		print_length += ft_printnbr_base(va_arg(args, unsigned int),
+		print_length += printnbr_base(va_arg(args, unsigned int),
 				"0123456789");
 	else if (*format == 'x')
-		print_length += ft_printnbr_base(va_arg(args, unsigned int),
+		print_length += printnbr_base(va_arg(args, unsigned int),
 				"0123456789abcdef");
 	else if (*format == 'X')
-		print_length += ft_printnbr_base(va_arg(args, unsigned int),
+		print_length += printnbr_base(va_arg(args, unsigned int),
 				"0123456789ABCDEF");
 	return (print_length);
 }
@@ -54,10 +54,10 @@ int	ft_printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			print_length += ft_print_format(args, format);
+			print_length += print_format(args, format);
 		}
 		else
-			print_length += ft_printchar(*format);
+			print_length += printchar(*format);
 		format++;
 	}
 	va_end(args);
@@ -65,6 +65,7 @@ int	ft_printf(const char *format, ...)
 }
 
 /*
+#include <stdio.h>
 int	main(void)
 {
 	int				count_printf;
@@ -83,11 +84,11 @@ int	main(void)
 	c = 'd';
 	s = "";
 	p = &c;
-	d = 14137561456491;
-	i = 14137561456491;
+	d = 14137;
+	i = 14137561;
 	u = -141375;
-	x = 14137561456491;
-	X = -14137561455555;
+	x = 1413756;
+	X = -14137;
 	printf("Fonction printf original:\n");
 	//count_printf = printf("%s", s);
 	count_printf += printf("%c", c);

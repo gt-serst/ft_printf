@@ -6,7 +6,7 @@
 #    By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/17 22:06:54 by geraudtsers       #+#    #+#              #
-#    Updated: 2023/02/24 12:30:19 by gt-serst         ###   ########.fr        #
+#    Updated: 2023/06/07 10:20:24 by gt-serst         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ AR					=	ar rcs
 
 RM					=	rm -rf
 
-SRCS				=	ft_printf.c ft_printchar.c ft_printstr.c ft_print_address.c ft_printnbr_base.c
+SRCS				=	ft_printf.c printchar.c printstr.c print_address.c printnbr_base.c
 
 OBJS				=	$(addprefix srcs/, $(SRCS:.c=.o))
 
